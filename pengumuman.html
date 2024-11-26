@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner Announcement</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #1e3a8a;
+            position: relative; /* Position to contain pseudo-element */
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images4.alphacoders.com/970/970365.png') no-repeat center center fixed; /* Add the URL of the Touhou image here */
+            background-size: cover;
+            filter: blur(2px); /* Apply blur only to the background */
+            z-index: -1; /* Ensure the background is behind the content */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 50%;
+            position: relative;
+            z-index: 1; /* Make sure the container content is above the blurred background */
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        select, .result {
+            padding: 8px 12px;
+            font-size: 1em;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #1e3a8a;
+            background-color: #f4f8ff;
+        }
+        select {
+            width: 80%;
+            color: #1e3a8a;
+            cursor: pointer;
+        }
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1565c0;
+            overflow-x: auto;
+        }
+        .not-winner {
+            color: #f44336;
+            font-size: 1em;
+            font-weight: normal;
+        }
+        .button {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .button:hover {
+            background-color: #0d47a1;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #1e3a8a;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: white;
+        }
+    </style>
+     <script src=
+ "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+        <script src=
+ "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
+
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Pengumuman Pemenang</h1>
+        <p>Pilih Tim Anda Untuk Melihat Rank</p>
+        <select id="teamSelect">
+            <option value="Tolong pilih">Tolong Pilih</option> 
+            <option value="BeTheOne">BeTheOne</option>
+            <option value="UNPRI X POLJAM">UNPRI X POLJAM</option>
+            <option value="Katakan Menang">Katakan Menang</option>
+            <option value="CreaTeam">CreaTeam</option>
+            <option value="HaDe">HaDe</option>
+            <option value="CobainDong">CobainDong</option>
+        </select>
+        <p class="result" id="rankResult">Pilih Tim Anda Terlebih Dahulu</p>
+        <button type="button" class="button" id="pdfdownload">Unduh PDF</button>
+    </div>
+
+    <script>
+        const teamRanks = {
+            "BeTheOne": 2,
+            "UNPRI X POLJAM": 4,
+            "Katakan Menang": 1,
+            "CreaTeam": 6,
+            "HaDe": 3,
+            "CobainDong": 5
+        };
+        const teamresult = {
+            "BeTheOne": [3.715, 3.85],
+            "UNPRI X POLJAM": [3.715, 3.54375],
+            "Katakan Menang": [4.1, 3.595],
+            "CreaTeam": [3.74, 3.30625],
+            "HaDe": [4.005, 3.2825],
+            "CobainDong": [3.65, 3.5875]
+        };
+
+        const teamSelect = document.getElementById('teamSelect');
+        const rankResult = document.getElementById('rankResult');
+        const pdfButton = document.getElementById('pdfdownload');
+        pdfButton.addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('l','mm',[1500,1400]);
+            let pdfjs = document.querySelector("#rankResult");
+            doc.html(pdfjs,{
+                callback: function(doc){
+                    doc.save("UINIC_6.0_UIUX_COMPETITION_RESULT.pdf");
+                },
+                x:12,
+                y:12
+            });
+        });
+
+
+
+
+        teamSelect.addEventListener('change', function() {
+            const selectedTeam = teamSelect.value;
+            const rank = teamRanks[selectedTeam];
+            
+            if (rank <= 3) {
+                rankResult.innerHTML = `${selectedTeam} Rank: ${rank} - Anda adalah pemenang!!<br>
+                <table>
+                    <tr>
+                        <th> Nilai Penyisihan </th>
+                        <th> Nilai Finalis/Presentasi </th>
+                        <th> Hasil </th>
+                    </tr>
+                    <tr>
+                        <td> ${teamresult[selectedTeam][0]} </td>
+                        <td> ${teamresult[selectedTeam][1]} </td>
+                        <td> ${(teamresult[selectedTeam][0] + teamresult[selectedTeam][1]) / 2} </td>
+                    </tr>
+                </table>`;
+                alert(`${selectedTeam} Selamat anda adalah pemenang!!`);
+            } else {
+                rankResult.innerHTML = `${selectedTeam} Rank: ${rank}<br>Mohon maaf anda bukan pemenang, tetap semangat dan jangan putus asa teman!!<br>
+                <table>
+                    <tr>
+                        <th> Nilai Penyisihan </th>
+                        <th> Nilai Finalis/Presentasi </th>
+                        <th> Hasil </th>
+                    </tr>
+                    <tr>
+                        <td> ${teamresult[selectedTeam][0]} </td>
+                        <td> ${teamresult[selectedTeam][1]} </td>
+                        <td> ${(teamresult[selectedTeam][0] + teamresult[selectedTeam][1]) / 2} </td>
+                    </tr>
+                </table>`;
+            }
+        });
+    </script>
+</body>
+</html>
