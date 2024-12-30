@@ -2,24 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
-    <link>/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Dec 2024 23:28:47 +0700</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 08:37:25 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrasi ke static file</title>
+      <link>http://localhost:1313/posts/migrasi_ke_static_file/</link>
+      <pubDate>Mon, 30 Dec 2024 08:37:25 +0700</pubDate>
+      <guid>http://localhost:1313/posts/migrasi_ke_static_file/</guid>
+      <description>&lt;h2 id=&#34;saya-telah-melakukan-migrasi-dari-pythonanywhere-ke-sini&#34;&gt;Saya telah melakukan migrasi dari pythonanywhere ke sini&lt;/h2&gt;&#xA;&lt;p&gt;Akhirnya saya dapat membeli domain saya menggunakan niagahoster, karena pythonanywhere.com membutuhkan akses premium untuk domain maka saya menggunakan github static file untuk hosting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;apa-saja-kerepotan-yang-dialami&#34;&gt;Apa saja kerepotan yang dialami?&lt;/h2&gt;&#xA;&lt;p&gt;Untuk membuat blog menggunakan framework django cukup mudah untuk dimanage namun tidak untuk static website, kenapa? karena saya harus push untuk melakukan update blog tidak seperti saat memakai blog django yang saya buat dimana hanya perlu tekan kirim pada dashboard admin.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My First Post</title>
-      <link>/posts/my-first-post/</link>
+      <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Sun, 29 Dec 2024 23:28:47 +0700</pubDate>
-      <guid>/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
       <description></description>
     </item>
     <item>
       <title>First</title>
-      <link>/posts/first/</link>
+      <link>http://localhost:1313/posts/first/</link>
       <pubDate>Sun, 29 Dec 2024 23:24:49 +0700</pubDate>
-      <guid>/posts/first/</guid>
+      <guid>http://localhost:1313/posts/first/</guid>
       <description>&lt;h1 id=&#34;hello&#34;&gt;hello&lt;/h1&gt;</description>
     </item>
   </channel>
