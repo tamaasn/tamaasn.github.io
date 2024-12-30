@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://blog.akmalsn.my.id/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog.akmalsn.my.id/categories/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/default/</loc>
+    <loc>https://blog.akmalsn.my.id/tags/default/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/default/</loc>
+    <loc>https://blog.akmalsn.my.id/categories/default/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2024-12-30-meja_berantakan/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/2024-12-30-meja_berantakan/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://blog.akmalsn.my.id/tags/</loc>
     <lastmod>2024-12-30T09:13:07+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/migrasi_ke_static_file/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/migrasi_ke_static_file/</loc>
     <lastmod>2024-12-30T08:37:25+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/first/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/first/</loc>
     <lastmod>2024-12-29T23:24:49+07:00</lastmod>
   </url>
 </urlset>
