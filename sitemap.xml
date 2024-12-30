@@ -2,17 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://blog.akmalsn.my.id/</loc>
     <lastmod>2024-12-30T08:37:25+07:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/migrasi_ke_static_file/</loc>
     <lastmod>2024-12-30T08:37:25+07:00</lastmod>
   </url><url>
-    <loc>/posts/first/</loc>
+    <loc>https://blog.akmalsn.my.id/posts/</loc>
+    <lastmod>2024-12-30T08:37:25+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/posts/my-first-post/</loc>
+    <lastmod>2024-12-29T23:28:47+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/posts/first/</loc>
     <lastmod>2024-12-29T23:24:49+07:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://blog.akmalsn.my.id/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://blog.akmalsn.my.id/tags/</loc>
   </url>
 </urlset>
