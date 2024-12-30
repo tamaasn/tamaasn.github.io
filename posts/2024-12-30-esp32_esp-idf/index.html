@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	======<br>
+	== <a href="https://blog.akmalsn.my.id/"></a> ==<br>
+	======
+	<div style="float: right;">Hanya diary dari mahasiswa pemalas</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Postingan</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</h1>
+			<b><time>2024-12-30 20:16:49</time></b>
+		       
+		           <a href="/tags/embedded-system">Embedded System</a>
+        	       
+
+			<div>
+				<h2 id="apa-itu-esp32">Apa itu ESP32?</h2>
+<p>
+<figure>
+  <img src="/images/foto_esp.jpeg" alt="Foto ESP32" />
+</figure>
+
+
+
+ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.</p>
+<h2 id="mengapa-memprogram-menggunakan-esp-idf">Mengapa memprogram menggunakan ESP-IDF?</h2>
+<p>Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
+Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.</p>
+<h2 id="instalasi-esp-idf">Instalasi ESP-IDF</h2>
+<h3 id="1-pertama-tama-kita-akan-clone-esp-idf-dari-repository-github-mereka">1. Pertama-tama kita akan clone ESP-IDF dari repository github mereka</h3>
+<p><code>git clone --recursive https://github.com/espressif/esp-idf.git</code>
+<br>
+lalu ketik lagi untuk fetch submodule
+<br>
+<code>git submodule update --init --recursive</code></p>
+<h3 id="2-install-depedencies-yang-dibutuhkan">2. Install depedencies yang dibutuhkan</h3>
+<p><code>sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util</code></p>
+<h3 id="3-menginstall-tool">3. Menginstall tool</h3>
+<p><code>cd esp-idf</code><br>
+<code>./install.sh</code></p>
+<h3 id="4-menyiapkan-environment-variabel">4. Menyiapkan environment variabel</h3>
+<p><code>. ./export.sh</code>
+karena tidak selalu berada di sistem (jika membuat jendela baru tidak dapat akses idf.py) maka tulis ini di .bashrc<br>
+<code>export IDF_PATH=$HOME/letak_file_esp_idf</code><br>
+<code>source $IDF_PATH/export.sh</code></p>
+<h3 id="5-cek-apakah-berhasil">5. Cek apakah berhasil</h3>
+<p><code>idf.py --version</code>
+<br>
+Jika ada output dari terminal maka instalasi ESP-IDF berhasil!</p>
+<h2 id="memprogram-esp32-dengan-esp-idf">Memprogram ESP32 dengan ESP-IDF</h2>
+<h3 id="1buat-project-baru-dengan-idfpy">1.Buat project baru dengan idf.py</h3>
+<p><code>idf.py create-project blink-led</code></p>
+<h3 id="2lalu-masuk-ke-directory-project">2.Lalu masuk ke directory project</h3>
+<p><code>cd blink-led</code></p>
+<h3 id="3karena-kita-menggunakan-esp32-maka-kita-set-target-esp32">3.Karena kita menggunakan esp32 maka kita set target esp32</h3>
+<p><code>idf.py set-target esp32</code></p>
+<h3 id="4modifikasi-file-mainblink-led">4.Modifikasi file main/blink-led.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;freertos/FreeRTOS.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;freertos/task.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;driver/gpio.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// pin GPIO misal punya saya GPIO 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define LED_GPIO GPIO_NUM_2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">app_main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// konfigurasi sebagai output untuk GPIO 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">gpio_set_direction</span>(LED_GPIO, GPIO_MODE_OUTPUT);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Nyala!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">gpio_set_level</span>(LED_GPIO, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">vTaskDelay</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> portTICK_PERIOD_MS); <span style="color:#75715e">// Delay for 1 second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Mati!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">gpio_set_level</span>(LED_GPIO, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">vTaskDelay</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> portTICK_PERIOD_MS); <span style="color:#75715e">// Delay for 1 second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><h3 id="5-build-dan-flash">5. Build dan flash</h3>
+<p>Untuk build dapat menggunakan
+<code>idf.py build</code>
+Jika sudah build maka flash file ke ESP32 menggunakan
+<code>idf.py flash</code></p>
+<h2 id="hasil">Hasil</h2>
+<p>
+<figure>
+  <img src="/images/led_blink.gif" alt="hasil" />
+</figure>
+
+
+</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2024-12-30-esp32_esp-idf/">Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</a></li>
+				
+				<li><a href="/posts/2024-12-30-meja_berantakan/">Meja Berantakan</a></li>
+				
+				<li><a href="/posts/migrasi_ke_static_file/">Migrasi ke static file</a></li>
+				
+				<li><a href="/posts/first/">First</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="https://blog.akmalsn.my.id/"><b></b></a>.
+	<a href="https://github.com/tamaasn"><b>Github</b></a>.
+	<a href="https://www.linkedin.com/in/akmal-sani-400bb4272/"><b>Linkedin</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

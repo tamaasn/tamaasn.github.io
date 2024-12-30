@@ -6,20 +6,20 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Dec 2024 09:13:07 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 20:16:49 +0700</lastBuildDate>
     <atom:link href="https://blog.akmalsn.my.id/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teknologi</title>
+      <link>https://blog.akmalsn.my.id/categories/teknologi/</link>
+      <pubDate>Mon, 30 Dec 2024 20:16:49 +0700</pubDate>
+      <guid>https://blog.akmalsn.my.id/categories/teknologi/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Keseharian</title>
       <link>https://blog.akmalsn.my.id/categories/keseharian/</link>
       <pubDate>Mon, 30 Dec 2024 09:13:07 +0700</pubDate>
       <guid>https://blog.akmalsn.my.id/categories/keseharian/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Teknologi</title>
-      <link>https://blog.akmalsn.my.id/categories/teknologi/</link>
-      <pubDate>Mon, 30 Dec 2024 08:37:25 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/categories/teknologi/</guid>
       <description></description>
     </item>
   </channel>
