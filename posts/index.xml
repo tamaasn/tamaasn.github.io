@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
-    <link>https://blog.akmalsn.my.id/posts/</link>
+    <link>blog.akmalsn.my.id/posts/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Dec 2024 20:56:41 +0700</lastBuildDate>
-    <atom:link href="https://blog.akmalsn.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="blog.akmalsn.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Übermensch, Menjadi Manusia yang Lebih Baik</title>
-      <link>https://blog.akmalsn.my.id/posts/2024-12-31-ubermensch/</link>
+      <link>blog.akmalsn.my.id/posts/2024-12-31-ubermensch/</link>
       <pubDate>Tue, 31 Dec 2024 20:56:41 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/posts/2024-12-31-ubermensch/</guid>
+      <guid>blog.akmalsn.my.id/posts/2024-12-31-ubermensch/</guid>
       <description>&lt;h2 id=&#34;apa-itu-übermensch&#34;&gt;Apa itu Übermensch?&lt;/h2&gt;&#xA;&lt;p&gt;Übermensch adalah konsep yang dibuat oleh Friedrich Nietzche melalui bukunya yang berjudul &amp;ldquo;Thus Spoke Zarasthustra&amp;rdquo;.Übermensch berarti &amp;ldquo;Manusia Super&amp;rdquo;,&amp;ldquo;Manusia Unggul&amp;rdquo; yang diatas manusia biasa. Übermensch sendiri tidak bergantung terhadap nilai-nilai yang ditentukan oleh manusia lain. Übermensch akan membuat nilainya sendiri yang tidak terikat dengan standar masyarakat.&lt;/p&gt;&#xA;&lt;h2 id=&#34;evolusi-übermensch&#34;&gt;Evolusi Übermensch.&lt;/h2&gt;&#xA;&lt;p&gt;Manusia memiliki potensi untuk menjadi lebih baik dan membawa eksistensi ke jenjang yang lebih baik. Kita sebagai manusia harus bisa keluar dari zona nyaman karena zona nyaman akan menjadi hambatan untuk evolusi batin kita. Bagi manusia kera atau binatang adalah sebuah ejekan yang dilontarkan kepada manusia lain lantas bagaimana manusia jika ia berada di hadapan manusia yang lebih baik?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</title>
-      <link>https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/</link>
+      <link>blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/</link>
       <pubDate>Mon, 30 Dec 2024 20:16:49 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/</guid>
-      <description>&lt;h2 id=&#34;apa-itu-esp32&#34;&gt;Apa itu ESP32?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.akmalsn.my.id/images/foto_esp.jpeg&#34; alt=&#34;Foto ESP32&#34;&gt;&#xA;ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.&lt;/p&gt;&#xA;&lt;h2 id=&#34;mengapa-memprogram-menggunakan-esp-idf&#34;&gt;Mengapa memprogram menggunakan ESP-IDF?&lt;/h2&gt;&#xA;&lt;p&gt;Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?&#xA;Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.&lt;/p&gt;</description>
+      <guid>blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/</guid>
+      <description>&lt;h2 id=&#34;apa-itu-esp32&#34;&gt;Apa itu ESP32?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;blog.akmalsn.my.id/images/foto_esp.jpeg&#34; alt=&#34;Foto ESP32&#34;&gt;&#xA;ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.&lt;/p&gt;&#xA;&lt;h2 id=&#34;mengapa-memprogram-menggunakan-esp-idf&#34;&gt;Mengapa memprogram menggunakan ESP-IDF?&lt;/h2&gt;&#xA;&lt;p&gt;Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?&#xA;Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meja Berantakan</title>
-      <link>https://blog.akmalsn.my.id/posts/2024-12-30-meja_berantakan/</link>
+      <link>blog.akmalsn.my.id/posts/2024-12-30-meja_berantakan/</link>
       <pubDate>Mon, 30 Dec 2024 09:13:07 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/posts/2024-12-30-meja_berantakan/</guid>
-      <description>&lt;p&gt;Bagi banyak orang seringkali berpikir bahwa meja yang bersih dan tertata rapi dapat memberikan kenyamanan untuk bekerja, namun entah kenapa tidak bagi saya. Meja yang berantakan justru membuat diri saya merasa terfokus dengan pekerjaan.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.akmalsn.my.id/foto_meja.jpeg&#34; alt=&#34;foto meja saya&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Foto meja saya&lt;/p&gt;&#xA;&lt;p&gt;Dari fenomena ini saya seringkali dianggap aneh karena menyukai workspace yang berantakan. Setelah saya pikirkan ternyata ada beberapa hal yang membuat saya merasa nyaman dengan kondisi meja seperti ini.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Meja berantakan entah kenapa memberikan saya ide yang lebih banyak. Sebagai programmer yang ingin menggeluti embedded system dan game development saya sering kali menempelkan cheatsheet untuk saya ingat di meja maupun dinding karena saya membutuhkan cheatsheet tersebut saat saya lupa. Tak jarang juga saya membuat skema proyek saya yang saya tempelkan ke dinding.&lt;/p&gt;</description>
+      <guid>blog.akmalsn.my.id/posts/2024-12-30-meja_berantakan/</guid>
+      <description>&lt;p&gt;Bagi banyak orang seringkali berpikir bahwa meja yang bersih dan tertata rapi dapat memberikan kenyamanan untuk bekerja, namun entah kenapa tidak bagi saya. Meja yang berantakan justru membuat diri saya merasa terfokus dengan pekerjaan.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;blog.akmalsn.my.id/foto_meja.jpeg&#34; alt=&#34;foto meja saya&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Foto meja saya&lt;/p&gt;&#xA;&lt;p&gt;Dari fenomena ini saya seringkali dianggap aneh karena menyukai workspace yang berantakan. Setelah saya pikirkan ternyata ada beberapa hal yang membuat saya merasa nyaman dengan kondisi meja seperti ini.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Meja berantakan entah kenapa memberikan saya ide yang lebih banyak. Sebagai programmer yang ingin menggeluti embedded system dan game development saya sering kali menempelkan cheatsheet untuk saya ingat di meja maupun dinding karena saya membutuhkan cheatsheet tersebut saat saya lupa. Tak jarang juga saya membuat skema proyek saya yang saya tempelkan ke dinding.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Migrasi ke static file</title>
-      <link>https://blog.akmalsn.my.id/posts/migrasi_ke_static_file/</link>
+      <link>blog.akmalsn.my.id/posts/migrasi_ke_static_file/</link>
       <pubDate>Mon, 30 Dec 2024 08:37:25 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/posts/migrasi_ke_static_file/</guid>
+      <guid>blog.akmalsn.my.id/posts/migrasi_ke_static_file/</guid>
       <description>&lt;h2 id=&#34;saya-telah-melakukan-migrasi-dari-pythonanywhere-ke-sini&#34;&gt;Saya telah melakukan migrasi dari pythonanywhere ke sini&lt;/h2&gt;&#xA;&lt;p&gt;Akhirnya saya dapat membeli domain saya menggunakan niagahoster, karena pythonanywhere.com membutuhkan akses premium untuk domain maka saya menggunakan github static file untuk hosting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;apa-saja-kerepotan-yang-dialami&#34;&gt;Apa saja kerepotan yang dialami?&lt;/h2&gt;&#xA;&lt;p&gt;Untuk membuat blog menggunakan framework django cukup mudah untuk dimanage namun tidak untuk static website, kenapa? karena saya harus push untuk melakukan update blog tidak seperti saat memakai blog django yang saya buat dimana hanya perlu tekan kirim pada dashboard admin.&lt;/p&gt;</description>
     </item>
     <item>
       <title>First</title>
-      <link>https://blog.akmalsn.my.id/posts/first/</link>
+      <link>blog.akmalsn.my.id/posts/first/</link>
       <pubDate>Sun, 29 Dec 2024 23:24:49 +0700</pubDate>
-      <guid>https://blog.akmalsn.my.id/posts/first/</guid>
+      <guid>blog.akmalsn.my.id/posts/first/</guid>
       <description>&lt;h1 id=&#34;hello&#34;&gt;hello&lt;/h1&gt;</description>
     </item>
   </channel>
