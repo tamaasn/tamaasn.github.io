@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>blog.akmalsn.my.id/categories/</link>
+    <link>https://blog.akmalsn.my.id/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Dec 2024 20:56:41 +0700</lastBuildDate>
-    <atom:link href="blog.akmalsn.my.id/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.akmalsn.my.id/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Keseharian</title>
-      <link>blog.akmalsn.my.id/categories/keseharian/</link>
+      <link>https://blog.akmalsn.my.id/categories/keseharian/</link>
       <pubDate>Tue, 31 Dec 2024 20:56:41 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/categories/keseharian/</guid>
+      <guid>https://blog.akmalsn.my.id/categories/keseharian/</guid>
       <description></description>
     </item>
     <item>
       <title>Teknologi</title>
-      <link>blog.akmalsn.my.id/categories/teknologi/</link>
+      <link>https://blog.akmalsn.my.id/categories/teknologi/</link>
       <pubDate>Mon, 30 Dec 2024 20:16:49 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/categories/teknologi/</guid>
+      <guid>https://blog.akmalsn.my.id/categories/teknologi/</guid>
       <description></description>
     </item>
   </channel>
