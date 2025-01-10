@@ -1,208 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.140.1">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu | </title>
-<meta name="keywords" content="Embedded System">
-<meta name="description" content="Apa itu ESP32?
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF?
-Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
-Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.">
-<meta name="author" content="">
-<link rel="canonical" href="https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://blog.akmalsn.my.id/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://blog.akmalsn.my.id/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://blog.akmalsn.my.id/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://blog.akmalsn.my.id/apple-touch-icon.png">
-<link rel="mask-icon" href="https://blog.akmalsn.my.id/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+  <title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu &middot; </title>
+  <meta name="description" content="" />
 
-    </style>
-</noscript><meta property="og:url" content="https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/">
-  <meta property="og:title" content="Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu">
-  <meta property="og:description" content="Apa itu ESP32? ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF? Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE? Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-30T20:16:49+07:00">
-    <meta property="article:modified_time" content="2024-12-30T20:16:49+07:00">
-    <meta property="article:tag" content="Embedded System">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu">
-<meta name="twitter:description" content="Apa itu ESP32?
-
-ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF?
-Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
-Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.">
+  
+  <link type="text/css" rel="stylesheet" href="https://blog.akmalsn.my.id/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.akmalsn.my.id/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.akmalsn.my.id/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.akmalsn.my.id/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://blog.akmalsn.my.id/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu",
-      "item": "https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu",
-  "name": "Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu",
-  "description": "Apa itu ESP32? ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.\nMengapa memprogram menggunakan ESP-IDF? Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE? Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.\n",
-  "keywords": [
-    "Embedded System"
-  ],
-  "articleBody": "Apa itu ESP32? ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.\nMengapa memprogram menggunakan ESP-IDF? Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE? Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.\nInstalasi ESP-IDF 1. Pertama-tama kita akan clone ESP-IDF dari repository github mereka git clone --recursive https://github.com/espressif/esp-idf.git lalu ketik lagi untuk fetch submodule git submodule update --init --recursive\n2. Install depedencies yang dibutuhkan sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util\n3. Menginstall tool cd esp-idf\n./install.sh\n4. Menyiapkan environment variabel . ./export.sh karena tidak selalu berada di sistem (jika membuat jendela baru tidak dapat akses idf.py) maka tulis ini di .bashrc\nexport IDF_PATH=$HOME/letak_file_esp_idf\nsource $IDF_PATH/export.sh\n5. Cek apakah berhasil idf.py --version Jika ada output dari terminal maka instalasi ESP-IDF berhasil!\nMemprogram ESP32 dengan ESP-IDF 1.Buat project baru dengan idf.py idf.py create-project blink-led\n2.Lalu masuk ke directory project cd blink-led\n3.Karena kita menggunakan esp32 maka kita set target esp32 idf.py set-target esp32\n4.Modifikasi file main/blink-led. #include #include \"freertos/FreeRTOS.h\" #include \"freertos/task.h\" #include \"driver/gpio.h\" // pin GPIO misal punya saya GPIO 2 #define LED_GPIO GPIO_NUM_2 void app_main() { // konfigurasi sebagai output untuk GPIO 2 gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT); while (1) { // Nyala! gpio_set_level(LED_GPIO, 1); vTaskDelay(1000 / portTICK_PERIOD_MS); // Delay for 1 second // Mati! gpio_set_level(LED_GPIO, 0); vTaskDelay(1000 / portTICK_PERIOD_MS); // Delay for 1 second } } 5. Build dan flash Untuk build dapat menggunakan idf.py build Jika sudah build maka flash file ke ESP32 menggunakan idf.py flash\nHasil ",
-  "wordCount" : "293",
-  "inLanguage": "en",
-  "datePublished": "2024-12-30T20:16:49+07:00",
-  "dateModified": "2024-12-30T20:16:49+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://blog.akmalsn.my.id/favicon.ico"
-    }
-  }
-}
-</script>
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
 </head>
 
-<body class=" dark" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    }
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://blog.akmalsn.my.id/"><h1></h1></a>
+      <p class="lead">
+       Hanya diary dari mahasiswa pemalas 
+      </p>
+    </div>
 
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://blog.akmalsn.my.id/posts/" title="Postingan">
-                    <span>Postingan</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://blog.akmalsn.my.id/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://blog.akmalsn.my.id/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-        </ul>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://blog.akmalsn.my.id/">Home</a> </li>
+        <li><a href="https://github.com/tamaasn"> Github </a></li><li><a href="https://www.linkedin.com/in/akmal-sani-400bb4272/"> LinkedIn </a></li><li><a href="/posts"> Postingan </a></li>
+      </ul>
     </nav>
-</header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title entry-hint-parent">
-      Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu
-    </h1>
-    <div class="post-meta"><span title='2024-12-30 20:16:49 +0700 WIB'>December 30, 2024</span>&nbsp;·&nbsp;2 min
+    <p>&copy; 2025. All rights reserved. </p>
+  </div>
+</aside>
 
-</div>
-  </header> 
-  <div class="post-content"><h2 id="apa-itu-esp32">Apa itu ESP32?<a hidden class="anchor" aria-hidden="true" href="#apa-itu-esp32">#</a></h2>
-<p><img alt="Foto ESP32" loading="lazy" src="/images/foto_esp.jpeg">
+    <main class="content container">
+    <div class="post">
+  <h1>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</h1>
+  <time datetime=2024-12-30T20:16:49&#43;0700 class="post-date">Mon, Dec 30, 2024</time>
+  <h2 id="apa-itu-esp32">Apa itu ESP32?</h2>
+<p><img src="/images/foto_esp.jpeg" alt="Foto ESP32">
 ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.</p>
-<h2 id="mengapa-memprogram-menggunakan-esp-idf">Mengapa memprogram menggunakan ESP-IDF?<a hidden class="anchor" aria-hidden="true" href="#mengapa-memprogram-menggunakan-esp-idf">#</a></h2>
+<h2 id="mengapa-memprogram-menggunakan-esp-idf">Mengapa memprogram menggunakan ESP-IDF?</h2>
 <p>Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
 Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.</p>
-<h2 id="instalasi-esp-idf">Instalasi ESP-IDF<a hidden class="anchor" aria-hidden="true" href="#instalasi-esp-idf">#</a></h2>
-<h3 id="1-pertama-tama-kita-akan-clone-esp-idf-dari-repository-github-mereka">1. Pertama-tama kita akan clone ESP-IDF dari repository github mereka<a hidden class="anchor" aria-hidden="true" href="#1-pertama-tama-kita-akan-clone-esp-idf-dari-repository-github-mereka">#</a></h3>
+<h2 id="instalasi-esp-idf">Instalasi ESP-IDF</h2>
+<h3 id="1-pertama-tama-kita-akan-clone-esp-idf-dari-repository-github-mereka">1. Pertama-tama kita akan clone ESP-IDF dari repository github mereka</h3>
 <p><code>git clone --recursive https://github.com/espressif/esp-idf.git</code>
 <br>
 lalu ketik lagi untuk fetch submodule
 <br>
 <code>git submodule update --init --recursive</code></p>
-<h3 id="2-install-depedencies-yang-dibutuhkan">2. Install depedencies yang dibutuhkan<a hidden class="anchor" aria-hidden="true" href="#2-install-depedencies-yang-dibutuhkan">#</a></h3>
+<h3 id="2-install-depedencies-yang-dibutuhkan">2. Install depedencies yang dibutuhkan</h3>
 <p><code>sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util</code></p>
-<h3 id="3-menginstall-tool">3. Menginstall tool<a hidden class="anchor" aria-hidden="true" href="#3-menginstall-tool">#</a></h3>
+<h3 id="3-menginstall-tool">3. Menginstall tool</h3>
 <p><code>cd esp-idf</code><br>
 <code>./install.sh</code></p>
-<h3 id="4-menyiapkan-environment-variabel">4. Menyiapkan environment variabel<a hidden class="anchor" aria-hidden="true" href="#4-menyiapkan-environment-variabel">#</a></h3>
+<h3 id="4-menyiapkan-environment-variabel">4. Menyiapkan environment variabel</h3>
 <p><code>. ./export.sh</code>
 karena tidak selalu berada di sistem (jika membuat jendela baru tidak dapat akses idf.py) maka tulis ini di .bashrc<br>
 <code>export IDF_PATH=$HOME/letak_file_esp_idf</code><br>
 <code>source $IDF_PATH/export.sh</code></p>
-<h3 id="5-cek-apakah-berhasil">5. Cek apakah berhasil<a hidden class="anchor" aria-hidden="true" href="#5-cek-apakah-berhasil">#</a></h3>
+<h3 id="5-cek-apakah-berhasil">5. Cek apakah berhasil</h3>
 <p><code>idf.py --version</code>
 <br>
 Jika ada output dari terminal maka instalasi ESP-IDF berhasil!</p>
-<h2 id="memprogram-esp32-dengan-esp-idf">Memprogram ESP32 dengan ESP-IDF<a hidden class="anchor" aria-hidden="true" href="#memprogram-esp32-dengan-esp-idf">#</a></h2>
-<h3 id="1buat-project-baru-dengan-idfpy">1.Buat project baru dengan idf.py<a hidden class="anchor" aria-hidden="true" href="#1buat-project-baru-dengan-idfpy">#</a></h3>
+<h2 id="memprogram-esp32-dengan-esp-idf">Memprogram ESP32 dengan ESP-IDF</h2>
+<h3 id="1buat-project-baru-dengan-idfpy">1.Buat project baru dengan idf.py</h3>
 <p><code>idf.py create-project blink-led</code></p>
-<h3 id="2lalu-masuk-ke-directory-project">2.Lalu masuk ke directory project<a hidden class="anchor" aria-hidden="true" href="#2lalu-masuk-ke-directory-project">#</a></h3>
+<h3 id="2lalu-masuk-ke-directory-project">2.Lalu masuk ke directory project</h3>
 <p><code>cd blink-led</code></p>
-<h3 id="3karena-kita-menggunakan-esp32-maka-kita-set-target-esp32">3.Karena kita menggunakan esp32 maka kita set target esp32<a hidden class="anchor" aria-hidden="true" href="#3karena-kita-menggunakan-esp32-maka-kita-set-target-esp32">#</a></h3>
+<h3 id="3karena-kita-menggunakan-esp32-maka-kita-set-target-esp32">3.Karena kita menggunakan esp32 maka kita set target esp32</h3>
 <p><code>idf.py set-target esp32</code></p>
-<h3 id="4modifikasi-file-mainblink-led">4.Modifikasi file main/blink-led.<a hidden class="anchor" aria-hidden="true" href="#4modifikasi-file-mainblink-led">#</a></h3>
+<h3 id="4modifikasi-file-mainblink-led">4.Modifikasi file main/blink-led.</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;freertos/FreeRTOS.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;freertos/task.h&#34;</span><span style="color:#75715e">
@@ -225,94 +109,21 @@ Jika ada output dari terminal maka instalasi ESP-IDF berhasil!</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">vTaskDelay</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> portTICK_PERIOD_MS); <span style="color:#75715e">// Delay for 1 second
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
 </span></span><span style="display:flex;"><span>}  
-</span></span></code></pre></div><h3 id="5-build-dan-flash">5. Build dan flash<a hidden class="anchor" aria-hidden="true" href="#5-build-dan-flash">#</a></h3>
+</span></span></code></pre></div><h3 id="5-build-dan-flash">5. Build dan flash</h3>
 <p>Untuk build dapat menggunakan
 <code>idf.py build</code>
 Jika sudah build maka flash file ke ESP32 menggunakan
 <code>idf.py flash</code></p>
-<h2 id="hasil">Hasil<a hidden class="anchor" aria-hidden="true" href="#hasil">#</a></h2>
-<p><img alt="hasil" loading="lazy" src="/images/led_blink.gif"></p>
+<h2 id="hasil">Hasil</h2>
+<p><img src="/images/led_blink.gif" alt="hasil"></p>
+
+</div>
 
 
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="https://blog.akmalsn.my.id/tags/embedded-system/">Embedded System</a></li>
-    </ul>
-  </footer>
-</article>
     </main>
+
     
-<footer class="footer">
-        <span>&copy; 2025 <a href="https://blog.akmalsn.my.id/"></a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
+      
+    
+  </body>
 </html>
