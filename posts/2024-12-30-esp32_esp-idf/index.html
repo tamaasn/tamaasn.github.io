@@ -1,77 +1,59 @@
 <!DOCTYPE html>
-<html><head lang="en">
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu - </title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Apa itu ESP32?
-
-ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF?
-Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
-Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level." />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="https://blog.akmalsn.my.id/posts/2024-12-30-esp32_esp-idf/">
-  <meta property="og:title" content="Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu">
-  <meta property="og:description" content="Apa itu ESP32? ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF? Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE? Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-30T20:16:49+07:00">
-    <meta property="article:modified_time" content="2024-12-30T20:16:49+07:00">
-    <meta property="article:tag" content="Embedded System">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu">
-  <meta name="twitter:description" content="Apa itu ESP32? ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.
-Mengapa memprogram menggunakan ESP-IDF? Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE? Karena ESP-IDF adalah framework official dari Espressif Systems untuk pemrograman ESP32. ESP-IDF memang lebih susah digunakan dibandingkan Arduino IDE namun dengan ESP-IDF kita dapat lebih leluasa dalam pemrograman karena abstraksi Arduino IDE yang terlalu high-level.">
-
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</title>
+	<meta name="description" content="Hanya diary dari mahasiswa pemalas">
 	
-        <link href="https://blog.akmalsn.my.id/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
 	
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.akmalsn.my.id/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
-
-	
-	
-
-	
-	
-
 	
 </head>
 <body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="https://blog.akmalsn.my.id/"></a>
-	</div>
+	<header>
+	======<br>
+	== <a href="https://blog.akmalsn.my.id/"></a> ==<br>
+	======
+	<div style="float: right;"></div><br>
+	<p>
 	<nav>
-		
-		<a href="/about/">About</a>
-		
-		<a href="/categories/">Categories</a>
-		
-		<a href="/posts/">Postingan</a>
-		
-		<a href="/tags/">Tags</a>
-		
-		
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/posts/"><b>Postingan</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
 	</nav>
+	</p>
+	
 </header>
 
-<main>
-	<article>
-		<div class="title">
-			<h1 class="title">Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</h1>
-			<div class="meta">Posted on Dec 30, 2024</div>
-		</div>
-		
+	
+	<main>
+		<article>
+			<h1>Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</h1>
+			<b><time>2024-12-30 20:16:49</time></b>
+		       
+		           <a href="/tags/embedded-system">Embedded System</a>
+        	       
 
-		
+			<div>
+				<h2 id="apa-itu-esp32">Apa itu ESP32?</h2>
+<p>
+<figure>
+  <img src="/images/foto_esp.jpeg" alt="Foto ESP32" />
+</figure>
 
-		<section class="body">
-			<h2 id="apa-itu-esp32">Apa itu ESP32?</h2>
-<p><img src="/images/foto_esp.jpeg" alt="Foto ESP32">
+
+
 ESP32 adalah sebuah microcontroller yang dikembangkan oleh Espressif Systems sebuah perusahaan yang berada di Shanghai, Tiongkok. ESP32 seringkali dipakai untuk keperluan IoT (Internet of Things) dan Robotika.</p>
 <h2 id="mengapa-memprogram-menggunakan-esp-idf">Mengapa memprogram menggunakan ESP-IDF?</h2>
 <p>Kenapa memprogram menggunakan ESP-IDF kan ada Arduino IDE?
@@ -133,34 +115,45 @@ Jika ada output dari terminal maka instalasi ESP-IDF berhasil!</p>
 Jika sudah build maka flash file ke ESP32 menggunakan
 <code>idf.py flash</code></p>
 <h2 id="hasil">Hasil</h2>
-<p><img src="/images/led_blink.gif" alt="hasil"></p>
+<p>
+<figure>
+  <img src="/images/led_blink.gif" alt="hasil" />
+</figure>
 
-		</section>
 
-		<div class="post-tags">
-			
-			
-			<nav class="nav tags">
-				<ul class="tags">
-					
-					<li><a href="/tags/embedded-system">Embedded System</a></li>
-					
-				</ul>
-			</nav>
-			
-			
-		</div>
+</p>
+
+			</div>
 		</article>
-</main>
-<footer>
-  <div style="display:flex"></div>
-  <div class="footer-info">
-    2025  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
-  </div>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2024-12-31-ubermensch/">Übermensch, Menjadi Manusia yang Lebih Baik</a></li>
+				
+				<li><a href="/posts/2024-12-30-esp32_esp-idf/">Memprogram Board ESP32 Menggunakan ESP-IDF di Linux Ubuntu</a></li>
+				
+				<li><a href="/posts/2024-12-30-meja_berantakan/">Meja Berantakan</a></li>
+				
+				<li><a href="/posts/migrasi_ke_static_file/">Migrasi ke static file</a></li>
+				
+				<li><a href="/posts/first/">First</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2025 <a href="https://blog.akmalsn.my.id/"><b></b></a>.
+	</p>
 </footer>
 
-
-</div>
-    </body>
+</body>
 </html>
