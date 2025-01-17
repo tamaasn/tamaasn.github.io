@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>blog.akmalsn.my.id/tags/</link>
+    <link>https://blog.akmalsn.my.id/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Dec 2024 20:56:41 +0700</lastBuildDate>
-    <atom:link href="blog.akmalsn.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.akmalsn.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gaya Hidup</title>
-      <link>blog.akmalsn.my.id/tags/gaya-hidup/</link>
+      <link>https://blog.akmalsn.my.id/tags/gaya-hidup/</link>
       <pubDate>Tue, 31 Dec 2024 20:56:41 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/tags/gaya-hidup/</guid>
+      <guid>https://blog.akmalsn.my.id/tags/gaya-hidup/</guid>
       <description></description>
     </item>
     <item>
       <title>Masalah Sosial</title>
-      <link>blog.akmalsn.my.id/tags/masalah-sosial/</link>
+      <link>https://blog.akmalsn.my.id/tags/masalah-sosial/</link>
       <pubDate>Tue, 31 Dec 2024 20:56:41 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/tags/masalah-sosial/</guid>
+      <guid>https://blog.akmalsn.my.id/tags/masalah-sosial/</guid>
       <description></description>
     </item>
     <item>
       <title>Embedded System</title>
-      <link>blog.akmalsn.my.id/tags/embedded-system/</link>
+      <link>https://blog.akmalsn.my.id/tags/embedded-system/</link>
       <pubDate>Mon, 30 Dec 2024 20:16:49 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/tags/embedded-system/</guid>
+      <guid>https://blog.akmalsn.my.id/tags/embedded-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Produktivitas</title>
-      <link>blog.akmalsn.my.id/tags/produktivitas/</link>
+      <link>https://blog.akmalsn.my.id/tags/produktivitas/</link>
       <pubDate>Mon, 30 Dec 2024 09:13:07 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/tags/produktivitas/</guid>
+      <guid>https://blog.akmalsn.my.id/tags/produktivitas/</guid>
       <description></description>
     </item>
     <item>
       <title>Blogging</title>
-      <link>blog.akmalsn.my.id/tags/blogging/</link>
+      <link>https://blog.akmalsn.my.id/tags/blogging/</link>
       <pubDate>Mon, 30 Dec 2024 08:37:25 +0700</pubDate>
-      <guid>blog.akmalsn.my.id/tags/blogging/</guid>
+      <guid>https://blog.akmalsn.my.id/tags/blogging/</guid>
       <description></description>
     </item>
   </channel>
