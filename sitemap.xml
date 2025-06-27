@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.akmalsn.my.id/categories/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/tags/default/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/categories/default/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/posts/2025-06-27-i-moved-the-emperor-to-the-right-4-times/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/posts/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.akmalsn.my.id/tags/</loc>
+    <lastmod>2025-06-27T20:29:02+07:00</lastmod>
+  </url><url>
     <loc>https://blog.akmalsn.my.id/posts/bercermin/</loc>
     <lastmod>2025-01-23T19:45:25+07:00</lastmod>
   </url><url>
-    <loc>https://blog.akmalsn.my.id/categories/</loc>
+    <loc>https://blog.akmalsn.my.id/categories/cerita/</loc>
     <lastmod>2025-01-23T19:45:25+07:00</lastmod>
   </url><url>
-    <loc>https://blog.akmalsn.my.id/categories/cerpen/</loc>
-    <lastmod>2025-01-23T19:45:25+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.akmalsn.my.id/posts/</loc>
-    <lastmod>2025-01-23T19:45:25+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.akmalsn.my.id/tags/refleksi-diri/</loc>
-    <lastmod>2025-01-23T19:45:25+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.akmalsn.my.id/tags/</loc>
+    <loc>https://blog.akmalsn.my.id/tags/cerpen/</loc>
     <lastmod>2025-01-23T19:45:25+07:00</lastmod>
   </url><url>
     <loc>https://blog.akmalsn.my.id/tags/bantul/</loc>
